@@ -9,9 +9,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data
-public class UsuarioDto {
-
-    private UUID id;
+public class ActualizaUsuarioDto {
 
     @NotNull
     @NotBlank
@@ -23,11 +21,12 @@ public class UsuarioDto {
     @Size(min = 8, max = 16)
     private String numeroIdentificacion;
 
-    public static UsuarioDto nuevaInstanciaDesde(Usuario usuario) {
-        var dto = new UsuarioDto();
-        dto.setId(usuario.getId());
-        dto.setNombre(usuario.getNombre());
-        dto.setNumeroIdentificacion(usuario.getNumeroIdentificacion());
-        return dto;
+    public Usuario mapearAUsuario(UUID id) {
+        var usuario = new Usuario();
+        usuario.setId(id);
+        usuario.setNombre(nombre);
+        usuario.setNumeroIdentificacion(numeroIdentificacion);
+
+        return usuario;
     }
 }

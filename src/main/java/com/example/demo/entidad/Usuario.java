@@ -1,9 +1,6 @@
 package com.example.demo.entidad;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
@@ -17,6 +14,8 @@ import java.util.UUID;
 // data jpa anotaciones
 @Entity
 @Table(name = "usuarios")
+@NamedQuery(name = "Usuario.findByNif", query = "from Usuario u where u.numeroIdentificacion = :numeroIdentificacion")
+@NamedQuery(name = "Usuario.isARegistredNif", query = "select case when count(u)> 0 then true else false end from Usuario u where u.numeroIdentificacion = ?1")
 public class Usuario {
 
     @Id
