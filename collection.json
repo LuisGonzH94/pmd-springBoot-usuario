@@ -164,22 +164,22 @@
   "variable": [
     {
       "key": "path",
-      "value": "",
+      "value": "http://{{domain}}:{{port}}",
       "type": "default"
     },
     {
       "key": "context",
-      "value": "",
+      "value": "api",
       "type": "default"
     },
     {
       "key": "domain",
-      "value": "",
+      "value": "localhost",
       "type": "default"
     },
     {
       "key": "port",
-      "value": "",
+      "value": "8080",
       "type": "default"
     }
   ]
