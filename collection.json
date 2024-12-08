@@ -1,0 +1,186 @@
+{
+  "info": {
+    "name": "crud-project",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "usuarios",
+      "item": [
+        {
+          "name": "obtenerTodosLosUsuarios",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{path}}/{{context}}",
+              "protocol": "",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "{{context}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "actualizarUsuario",
+          "event": [],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{path}}/{{context}}/:id",
+              "protocol": "",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "{{context}}",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "787aab61-0b38-4c31-a8f2-0c252a98d5cc"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"bbbbb\",\n  \"numeroIdentificacion\": \"34567890\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "eliminarUsuarioPorUsuarioId",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{path}}/{{context}}/:id",
+              "protocol": "",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "{{context}}",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "787aab61-0b38-4c31-a8f2-0c252a98d5cc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "obtenerUsuarioPorUsuarioId",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{path}}/{{context}}/:id",
+              "protocol": "",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "{{context}}",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "787aab61-0b38-4c31-a8f2-0c252a98d5cc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "crearUsuario",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{path}}/{{context}}",
+              "protocol": "",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "{{context}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"aaaaa\",\n  \"numeroIdentificacion\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "path",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "context",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "domain",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "port",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

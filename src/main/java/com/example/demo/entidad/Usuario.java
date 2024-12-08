@@ -11,6 +11,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @EqualsAndHashCode
+@ToString
 // data jpa anotaciones
 @Entity
 @Table(name = "usuarios")
@@ -19,6 +20,7 @@ import java.util.UUID;
 public class Usuario {
 
     @Id
+    @GeneratedValue
     private UUID id;
 
     @Column(nullable = false, length = 56)

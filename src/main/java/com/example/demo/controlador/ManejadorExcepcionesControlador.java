@@ -18,7 +18,7 @@ public class ManejadorExcepcionesControlador {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<ProblemDetail> handleGeneralException(Exception exception) {
-        log.error("internal_error: " + exception.getMessage());
+        log.error("internal_error: {}", exception.getMessage());
 
         ProblemDetail problemDetail = ProblemDetail
                 .forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());
@@ -30,7 +30,7 @@ public class ManejadorExcepcionesControlador {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     @ResponseStatus(HttpStatus.PRECONDITION_FAILED)
     public ResponseEntity<ProblemDetail> handleMethodArgumentNotValidException(MethodArgumentTypeMismatchException exception) {
-        log.error("parameter_error.%s: %s".formatted(exception.getName(), exception.getMostSpecificCause().getMessage()));
+        log.error("parameter_error.{}: {}", exception.getName(), exception.getMostSpecificCause().getMessage());
 
         var problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.PRECONDITION_FAILED, exception.getMostSpecificCause().getMessage());
         problemDetail.setTitle(exception.getParameter().getMethod().getName());
@@ -42,6 +42,8 @@ public class ManejadorExcepcionesControlador {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ProblemDetail> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
+        log.error("parameter_error.{}: {}", exception.getParameter().getParameterName(), exception.getMessage());
+
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, exception.getMessage());
         problemDetail.setTitle("INPUT_NO_VALIDO");
 

@@ -53,6 +53,7 @@ public class UsuarioControlador {
     }
 
     @PutMapping({"/{usuarioId}", "/{usuarioId}/"})
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public ResponseEntity<UsuarioDto> actualizarUsuario(@PathVariable UUID usuarioId,
                                                         @RequestBody @Valid ActualizaUsuarioDto usuarioDto) {
         Usuario usuario = usuarioServicio.modificarUsuario(usuarioDto.mapearAUsuario(usuarioId));
